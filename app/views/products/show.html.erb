@@ -1,7 +1,11 @@
 <h1>This is the individual product page</h1>
-<h1>Name of product: <%= @product.name %></h1>
-<p>Cost of product: <%= @product.cost %></p>
-<p>Origin of product: <%= @product.country_origin %></p>
+<h3>Product: <%= @product.name %></h3>
+<p>Cost: <%= @product.cost %></p>
+<p>Origin: <%= @product.country_origin %></p>
 
 <p><%= link_to "Edit", edit_product_path(@product) %></p>
+<p> <%= link_to "Delete", product_path(@product),
+                          :data => {:confirm => "Please confirm product deletion",
+                          :method => "delete"} %></p>
+
 <p><%= link_to "Return to homepage", products_path %></p>
