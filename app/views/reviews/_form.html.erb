@@ -1,0 +1,19 @@
+<%= render "shared/errors" %>
+
+<%= form_for [@product, @review] do |f| %>
+  <div class="form-group">
+    <%= f.text_field :author, required: true, class: "form-control", placeholder: "author" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :content_body, required: true, class: "form-control", placeholder: "content_body" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :rating, required: true, class: "form-control", placeholder: "rating: enter a number 1 to 5 stars" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit, class: 'btn btn-success' %>
+  </div>
+<% end %>

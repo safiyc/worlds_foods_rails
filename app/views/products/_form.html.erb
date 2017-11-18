@@ -1,3 +1,5 @@
+<%= render "shared/errors" %>
+
 <%= form_for @product do |f| %>
   <div class="form-group">
     <%= f.text_field :name, required: true, class: "form-control", placeholder: "name" %>
