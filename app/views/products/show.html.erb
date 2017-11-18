@@ -1,35 +1,47 @@
-<h1>This is the product page</h1>
-<h3>Product: <%= @product.name %></h3>
-<p>Cost: <%= @product.cost %></p>
-<p>Origin: <%= @product.country_origin %></p>
+<% content_for(:title, "Product | World's Foods") %>
 
-<button class="btn btn-default">
-  <%= link_to "Edit", edit_product_path(@product) %>
-</button>
-<button class="btn btn-default">
-  <%= link_to "Delete", product_path(@product), :data => {:confirm => "Please confirm deletion", :method => "delete"} %>
-</button>
+<div>
+  <h1><%= @product.name %></h1>
+  <p>Cost: <%= @product.cost %></p>
+  <p>Origin: <%= @product.country_origin %></p>
 
-<%  if @product.reviews.any? %>
-  <h4>Here are the reviews for this product:</h4>
+  <button class="btn btn-default">
+    <%= link_to "Edit", edit_product_path(@product) %>
+  </button>
+  <button class="btn btn-default">
+    <%= link_to "Delete", product_path(@product), :data => {:confirm => "Please confirm deletion", :method => "delete"} %>
+  </button>
+</div>
+<hr>
 
-  <ul>
-    <% @product.reviews.each do |review| %>
-      <li>
-        <%= review.author %> |
-        <%= review.content_body %> |
-        <%= review.rating %> |
-        <%= link_to "Edit", edit_product_review_path(@product, review) %> |
-        <%= link_to "Delete", product_review_path(@product, review),
-                                :data => {:confirm => "Please confirm deletion",
-                                               :method => "delete"} %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no reviews.</p>
-<% end %>
+<div>
+  <h3>Reviews:</h3>
+  <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
+  <%  if @product.reviews.any? %>
 
-<p><%= link_to "Add a review", new_product_review_path(@product) %></p>
+    <ul>
+      <% @product.reviews.each do |review| %>
+        <li>
+          <%= review.content_body %>
+          <div>
+            Author: <%= review.author %> | Rating: <%= review.rating %>
+          </div>
+          <div>
+            <button class="btn btn-default">
+              <%= link_to "Edit", edit_product_review_path(@product, review) %>
+            </button>
+            <button class="btn btn-default">
+              <%= link_to "Delete", product_review_path(@product, review),
+                                    :data => {:confirm => "Please confirm deletion",
+                                                   :method => "delete"} %>
+           </button>
+         </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no reviews.</p>
+  <% end %>
+</div>
 
 <p><%= link_to "Return to homepage", products_path %></p>

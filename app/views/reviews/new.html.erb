@@ -1,4 +1,6 @@
-<h1>New review for <%= @product.name %></h1>
+<% content_for(:title, "Add Review | World's Foods") %>
+
+<h1>Add Review for <%= @product.name %></h1>
 
 <%= render 'form' %>
 

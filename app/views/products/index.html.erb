@@ -1,4 +1,11 @@
-<h1>This is the index page</h1>
+<% content_for(:title, "Home | World's Foods") %>
+
+<h1>World's Foods</h1>
+<hr>
+<p>
+  At World's Foods, we carefully evaluate each and every product we sell. We feature foods that are free of artificial preservatives, colors, flavors, sweeteners, and hydrogenated fats. We are passionate about great tasting food and the pleasure of sharing it with others. We are committed to foods that are wholesome and safe to eat.
+</p>
+<hr>
 
 <ul>
   <% @products.each do |product| %>
