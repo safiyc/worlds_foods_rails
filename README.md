@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+============
+
+bugs:
+  -rating text field accepts ex. '2a', but saves as desired '2'
