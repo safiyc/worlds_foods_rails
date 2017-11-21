@@ -7,16 +7,37 @@
 </p>
 <hr>
 
-<h3>Recent Products</h3>
-<% if @three_recent_products.any? %>
-  <% @three_recent_products.each do |product| %>
-    <ul>
-      <li><%= link_to product.name, product_path(product) %> </li>
-    </ul>
-  <% end %>
-<% else %>
-<p>There are no recent products.</p>
-<% end %>
+<div class="row">
+  <div class="col-sm-6">
+    <h4>Recent Products</h4>
+    <% if @three_recent_products.any? %>
+      <% @three_recent_products.each do |product| %>
+        <ul>
+          <li><%= link_to product.name, product_path(product) %> </li>
+        </ul>
+      <% end %>
+    <% else %>
+      <p>There are no recent products.</p>
+    <% end %>
+  </div>
+  <div class="col-sm-6">
+    <h4>USA Products</h4>
+    <% if @usa_products.any? %>
+      <% @usa_products.each do |product| %>
+        <ul>
+          <li><%= link_to product.name, product_path(product) %></li>
+        </ul>
+      <% end %>
+    <% else %>
+      <p>There are no current products from the USA.</p>
+    <% end %>
+  </div>
+</div>
+<hr>
+
+<div class="#">
+  <h4>Most Reviewed Product</h4>
+</div>
 <hr>
 
 <h3>All Products</h3>
