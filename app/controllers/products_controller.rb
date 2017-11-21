@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @three_recent_products = Product.three_recent_products
     @usa_products = Product.usa_products
+    @most_reviews = Product.most_reviews
     render :index
   end
 

@@ -37,6 +37,16 @@
 
 <div class="#">
   <h4>Most Reviewed Product</h4>
+  <% if @most_reviews.any? %>
+    <% @most_reviews.each do |product| %>
+      <ul>
+        <li><%= link_to product.name, product_path(product) %>
+        </li>
+      </ul>
+    <% end %>
+  <% else %>
+    <p>There are no reviews at this point.</p>
+  <% end %>
 </div>
 <hr>
 
