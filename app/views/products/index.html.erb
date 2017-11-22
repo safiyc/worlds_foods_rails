@@ -1,60 +1,60 @@
 <% content_for(:title, "Home | World's Foods") %>
 
 <h1>World's Foods</h1>
+<h4><%= link_to "Add Product", new_product_path %></h4>
 <hr>
-<p>
-  At World's Foods, we carefully evaluate each and every product we sell. We feature foods that are free of artificial preservatives, colors, flavors, sweeteners, and hydrogenated fats. We are passionate about great tasting food and the pleasure of sharing it with others. We are committed to foods that are wholesome and safe to eat.
-</p>
+
 <hr>
+
 
 <div class="row">
   <div class="col-sm-6">
-    <h4>Recent Products</h4>
-    <% if @three_recent_products.any? %>
-      <% @three_recent_products.each do |product| %>
-        <ul>
-          <li><%= link_to product.name, product_path(product) %> </li>
-        </ul>
-      <% end %>
-    <% else %>
-      <p>There are no recent products.</p>
-    <% end %>
+    <p>
+      At World's Foods, we carefully evaluate each and every product we sell. We feature foods that are free of artificial preservatives, colors, flavors, sweeteners, and hydrogenated fats. We are passionate about great tasting food and the pleasure of sharing it with others. We are committed to foods that are wholesome and safe to eat.
+    </p>
   </div>
   <div class="col-sm-6">
-    <h4>USA Products</h4>
-    <% if @usa_products.any? %>
-      <% @usa_products.each do |product| %>
-        <ul>
-          <li><%= link_to product.name, product_path(product) %></li>
-        </ul>
+    <div>
+      <h5>Recent Products</h5>
+      <% if @three_recent_products.any? %>
+        <% @three_recent_products.each do |product| %>
+            <p><%= link_to product.name, product_path(product) %> </p>
+        <% end %>
+      <% else %>
+        <p>There are no recent products.</p>
       <% end %>
-    <% else %>
-      <p>There are no current products from the USA.</p>
-    <% end %>
+    </div>
+    <hr>
+    <div>
+      <h5>USA Products</h5>
+      <% if @usa_products.any? %>
+        <% @usa_products.each do |product| %>
+            <p><%= link_to product.name, product_path(product) %></p>
+        <% end %>
+      <% else %>
+        <p>There are no current products from the USA.</p>
+      <% end %>
+    </div>
+    <hr>
+    <div class="#">
+      <h5>Most Reviewed Product</h5>
+      <% if @most_reviews.any? %>
+        <% @most_reviews.each do |product| %>
+            <p><%= link_to product.name, product_path(product) %></p>
+            <p>Cost: $<%= product.cost %> | Origin: <%= product.country_origin %></p>
+        <% end %>
+      <% else %>
+        <p>There are no reviews at this point.</p>
+      <% end %>
+    </div>
   </div>
 </div>
 <hr>
 
-<div class="#">
-  <h4>Most Reviewed Product</h4>
-  <% if @most_reviews.any? %>
-    <% @most_reviews.each do |product| %>
-      <ul>
-        <li><%= link_to product.name, product_path(product) %>
-        </li>
-      </ul>
-    <% end %>
-  <% else %>
-    <p>There are no reviews at this point.</p>
-  <% end %>
-</div>
-<hr>
+
+
 
 <h3>All Products</h3>
-<ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
+    <p><%= link_to product.name, product_path(product) %></p>
   <% end %>
-</ul>
-
-<%= link_to "Add Product", new_product_path %>
