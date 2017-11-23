@@ -28,10 +28,10 @@
           </div>
           <div>
             <button class="btn btn-default">
-              <%= link_to "Edit", edit_product_review_path(@product, review) %>
+              <%= link_to "edit", edit_product_review_path(@product, review) %>
             </button>
             <button class="btn btn-default">
-              <%= link_to "Delete", product_review_path(@product, review),
+              <%= link_to "delete", product_review_path(@product, review),
                                     :data => {:confirm => "Please confirm deletion",
                                                    :method => "delete"} %>
            </button>
