@@ -1,31 +1,43 @@
-# README
+# World Foods
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Technologies used: Ruby, Ruby on Rails Framework, Postgres Database, Bootstrap, HTML, CSS
 
-Things you may want to cover:
+##### By Safiy Cham
 
-* Ruby version
+## Description
 
-* System dependencies
+This program lets user add/update/delete products and add/update/delete reviews for products.
 
-* Configuration
+## Setup
 
-* Database creation
+* terminal, run: git clone https://github.com/safiyc/worlds_foods_rails.git
 
-* Database initialization
+* terminal, in project directory, run: bundle install
 
-* How to run the test suite
+* terminal, in project directory, run: rake db:create
 
-* Services (job queues, cache servers, search engines, etc.)
+* terminal, in project directory, run: rake db:test:prepare
 
-* Deployment instructions
+* terminal, in project directory, run: rails servers
 
-* ...
+* web browser, paste to address bar: http://localhost:3000
 
+## Known Bugs
 
+* No known bugs
 
-============
+## Pending Features
 
-bugs:
-  -rating text field accepts ex. '2a', but saves as desired '2'
+* show average rating for each product
+* change ratings system so stars are used instead of a number
+* add user authentication
+
+## Contact Info
+
+* I can be reached for questions and comments at csafi13@yahoo.com
+
+## License
+
+Copyright (c) 2017
+
+This software is licensed under the MIT licensed
