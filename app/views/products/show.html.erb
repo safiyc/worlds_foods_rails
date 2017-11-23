@@ -15,8 +15,8 @@
 <hr>
 
 <div>
-  <h3>Reviews:</h3>
-  <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
+  <h3>Reviews <button class="btn btn-default"><%= link_to "Add Review", new_product_review_path(@product) %></button></h3>
+
   <%  if @product.reviews.any? %>
 
     <ul>
@@ -43,5 +43,6 @@
     <p>There are no reviews.</p>
   <% end %>
 </div>
+<hr>
 
 <p><%= link_to "Return to homepage", products_path %></p>

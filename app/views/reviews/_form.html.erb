@@ -2,15 +2,18 @@
 
 <%= form_for [@product, @review] do |f| %>
   <div class="form-group">
-    <%= f.text_field :author, required: true, class: "form-control", placeholder: "author" %>
+    <%= f.label :author %>
+    <%= f.text_field :author, required: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.text_field :content_body, required: true, class: "form-control", placeholder: "content_body" %>
+    <%= f.label :content_body %>
+    <%= f.text_field :content_body, required: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.text_field :rating, required: true, class: "form-control", placeholder: "rating: enter a number from 1 to 5 stars" %>
+    <%= f.label :rating %>
+    <%= f.text_field :rating, required: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
