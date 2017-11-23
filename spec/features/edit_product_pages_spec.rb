@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-describe "the add a product process" do
-  it "adds a new product" do
-    visit products_path
-    click_link "Add Product"
+describe "the edit a product process" do
+  it "edits a product" do
+    product = Product.create(name: "Black Tea", cost: 6, country_origin: "China")
+    visit product_path(product)
+    click_link "Edit"
     fill_in "Name", :with => "Green Tea"
     fill_in "Cost", :with => 6
     fill_in "Country origin", :with => "China"
