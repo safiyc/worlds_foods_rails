@@ -50,7 +50,8 @@
 </div>
 <hr>
 
-<h3>All Products <button class="btn btn-default"><%= link_to "Add Product", new_product_path %></button></h3>
+<h3 class="centered">All Products</h3>
+<h3 class="centered"><button class="btn btn-default"><%= link_to "Add Product", new_product_path %></button></h3>
   <% @products.each do |product| %>
     <p><%= link_to product.name, product_path(product) %></p>
   <% end %>

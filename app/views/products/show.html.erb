@@ -18,27 +18,27 @@
   <h3>Reviews <button class="btn btn-default"><%= link_to "Add Review", new_product_review_path(@product) %></button></h3>
 
   <%  if @product.reviews.any? %>
-
-    <ul>
-      <% @product.reviews.each do |review| %>
-        <li>
+    <% @product.reviews.each do |review| %>
+      <p>
+        <div class="content_body">
           <%= review.content_body %>
           <div>
-            Author: <%= review.author %> | Rating: <%= review.rating %>
+            <b>Author:</b> <%= review.author %> &nbsp | &nbsp <b>Rating:</b> <%= review.rating %>
           </div>
-          <div>
-            <button class="btn btn-default">
-              <%= link_to "edit", edit_product_review_path(@product, review) %>
-            </button>
-            <button class="btn btn-default">
-              <%= link_to "delete", product_review_path(@product, review),
-                                    :data => {:confirm => "Please confirm deletion",
-                                                   :method => "delete"} %>
-           </button>
-         </div>
-        </li>
-      <% end %>
-    </ul>
+        </div>
+        <div>
+          <button class="btn btn-default">
+            <%= link_to "edit", edit_product_review_path(@product, review) %>
+          </button>
+          <button class="btn btn-default">
+            <%= link_to "delete", product_review_path(@product, review),
+                                  :data => {:confirm => "Please confirm deletion",
+                                                 :method => "delete"} %>
+         </button>
+       </div>
+     </p>
+     <br>
+    <% end %>
   <% else %>
     <p>There are no reviews.</p>
   <% end %>
