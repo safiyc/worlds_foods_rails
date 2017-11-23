@@ -10,4 +10,10 @@ describe "the add a product process" do
     click_on "submit"
     expect(page).to have_content "Green Tea"
   end
+
+  it "gives error when no name is entered" do
+    visit new_product_path
+    click_on "submit"
+    expect(page).to have_content "submit"
+  end
 end
