@@ -22,6 +22,20 @@
 }
 
 .content_body {
-  width: 300px;
+  width: 400px;
   text-align: justify;
+}
+
+.bg-image {
+  background-image: url("world.jpg");
+  background-repeat: no-repeat;
+  margin-top: 5px;
+
+}
+
+.bg-opacity {
+  background: rgba(255, 255, 255, .7);
+  width: 94%;
+  padding: 5px;
+  margin: auto;
 }

@@ -6,7 +6,7 @@
 
 ## Description
 
-This program lets user add/update/delete products and add/update/delete reviews for products.
+This program lets user add/update/delete products and add/update/delete reviews for products
 
 ## Setup
 
@@ -34,7 +34,7 @@ This program lets user add/update/delete products and add/update/delete reviews 
 
 ## Contact Info
 
-* I can be reached for questions and comments at csafi13@yahoo.com
+For questions and comments, please contact csafi13@yahoo.com
 
 ## License
 
